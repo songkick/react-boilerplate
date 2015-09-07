@@ -1,0 +1,31 @@
+{
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "camelcase": 0,
+        "curly": 0,
+        "quotes": [1, "single"],
+        "max-len": [
+            2,
+            100,
+            4
+        ],
+        "no-underscore-dangle": 0,
+        "comma-dangle": [2, "never"],
+        "no-unused-expressions": 0,
+        "no-use-before-define": 0,
+        "space-after-keywords": 2
+    },
+    "ecmaFeatures": {
+        "destructuring": true,
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "classes": true,
+        "jsx": true,
+        "modules": true
+    },
+    "plugins": [
+        "react"
+    ]
+}

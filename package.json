@@ -1,0 +1,37 @@
+{
+  "name": "adele-dc-proto",
+  "version": "0.0.1",
+  "description": "Adele DC Prototype",
+  "main": "",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack-build.config.js --progress --profile --colors",
+    "dev": "webpack-dev-server --config webpack-dev.config.js --progress --profile --colors --hot "
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "@dvemac",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "whatwg-fetch": "^0.9.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.5.8",
+    "babel-loader": "^5.1.4",
+    "css-loader": "^0.17.0",
+    "eslint": "^1.3.1",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.3.1",
+    "exports-loader": "^0.6.2",
+    "imports-loader": "^0.6.4",
+    "react-hot-loader": "^1.2.7",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.11",
+    "webpack-dev-server": "^1.9.0"
+  }
+}
