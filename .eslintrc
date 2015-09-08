@@ -1,11 +1,11 @@
 {
     "env": {
-        "browser": true
+        "browser": true,
+        "node": true
     },
     "rules": {
         "camelcase": 0,
         "curly": 0,
-        "quotes": [1, "single"],
         "max-len": [
             2,
             100,
@@ -15,7 +15,12 @@
         "comma-dangle": [2, "never"],
         "no-unused-expressions": 0,
         "no-use-before-define": 0,
-        "space-after-keywords": 2
+        "space-after-keywords": 2,
+        "quotes": [2, "single"],
+        "strict": [2, "never"],
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": 2
     },
     "ecmaFeatures": {
         "destructuring": true,
@@ -25,6 +30,7 @@
         "jsx": true,
         "modules": true
     },
+    "parser": "babel-eslint",
     "plugins": [
         "react"
     ]

@@ -4,7 +4,6 @@ var path = require('path');
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://0.0.0.0:8080',
-        'webpack/hot/only-dev-server',
         './index.jsx'
     ],
     devtool: 'source-map',
@@ -24,7 +23,7 @@ module.exports = {
         loaders: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loaders: ['react-hot', 'babel'],
+            loaders: ['babel'],
         }, {
             test: /\.css$/,
             loader: 'style!css'
