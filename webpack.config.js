@@ -1,10 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
 
-module.exports = {
+var config = module.exports = {
     entry: [
-        'webpack-dev-server/client?http://0.0.0.0:8080',
-        './index.jsx'
+        './src/index.jsx'
     ],
     devtool: 'source-map',
     output: {
@@ -17,30 +16,33 @@ module.exports = {
     module: {
         preLoaders: [{
             test: /\.jsx?$/,
-            loader: "eslint-loader",
-            exclude: /node_modules/
+            include: /src/,
+            loader: 'eslint-loader'
         }],
         loaders: [{
             test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loaders: ['babel'],
+            include: /src/,
+            loaders: ['babel']
         }, {
             test: /\.css$/,
             loader: 'style!css'
         }]
     },
-    devServer: {
-        contentBase: "./public",
-        noInfo: true,
-        hot: true,
-        inline: true
-    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         new webpack.ProvidePlugin({
             'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
             'Promise': 'imports?this=>global!exports?global.Promise!es6-promise'
         })
     ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+    var uglifier = new webpack.optimize.UglifyJsPlugin({
+        minimize: true
+    });
+    config.plugins.push(uglifier);
+} else {config.entry.push('webpack-hot-middleware/client');
+    config.entry.push('webpack-hot-middleware/client');
+    config.plugins.push( new webpack.HotModuleReplacementPlugin() );
+    config.plugins.push( new webpack.NoErrorsPlugin() );
+}

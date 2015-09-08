@@ -1,8 +1,7 @@
-# Adele DC Prototype
-
+# React boilerplate
 
 ```
 npm install
-npm run dev     # run dev server
+npm start     # run dev server
 npm run build   # build assets
 ```
