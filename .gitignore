@@ -5,4 +5,4 @@ pids
 *.seed
 node_modules
 .idea
-public/bundle.*
+dist/
